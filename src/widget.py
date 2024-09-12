@@ -3,6 +3,7 @@ import datetime
 from src.masks import get_mask_account, get_mask_card_number
 """Импортируем функции из предыдущего ДЗ"""
 
+
 def mask_account_card(type_num_account:str) -> str:
     """Функция умеет обрабатывать информацию как о картах, так и о счетах"""
     return f'{type_num_account[:4]}{type_num_account[4:6]}** ****{type_num_account[12:]}'
