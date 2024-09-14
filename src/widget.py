@@ -1,15 +1,12 @@
 import datetime
 import masks
-from main import day_pay
 """Импортируем библиотеку datetime"""
 
-from src.masks import get_mask_account, get_mask_card_number
-"""Импортируем функции из предыдущего ДЗ"""
 
 def mask_account_card(type_num_account:[str]) -> [str]:
     """Функция умеет обрабатывать информацию как о картах, так и о счетах"""
     card_number = "".join(el if el.isdigit() else "" for el in type_num_account)
-    number_card_mask = get_mask_card_number(card_number)
+    number_card_mask = mask_account_card(card_number)
     name_card = "".join("" if el.isdigit() else el for el in type_num_account)
     data_card_mask = name_card + number_card_mask
     return data_card_mask
