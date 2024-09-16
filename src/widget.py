@@ -15,14 +15,14 @@ def mask_account_card(type_num_account: [str]) -> [str]:
 
 def get_date(day_pay: [str]) -> [str]:
     """Функция принимает на вход строку с датой в формате  и возвращает строку с датой"""
-    return f'{day_pay[8:10]}.{day_pay[5:7]}.{day_pay[:4]}'
+    return f"{day_pay[8:10]}.{day_pay[5:7]}.{day_pay[:4]}"
 
 
-#print(mask_account_card('Visa Super Card 1234567890123456')) # выведет "Visa Super Card 1234 56** **** 3456"
-#print(mask_account_card('Maestro 1234578484648788')) # выведет "Maestro 1234 57** **** 8788"
+# print(mask_account_card('Visa Super Card 1234567890123456')) # выведет "Visa Super Card 1234 56** **** 3456"
+# print(mask_account_card('Maestro 1234578484648788')) # выведет "Maestro 1234 57** **** 8788"
 
-#print(mask_account_card('Счет 12345678901234567890')) # выведет "Счет **7890"
-#print(mask_account_card('Счет 13579064547897898745')) # выведет "Счет **8745"
+# print(mask_account_card('Счет 12345678901234567890')) # выведет "Счет **7890"
+# print(mask_account_card('Счет 13579064547897898745')) # выведет "Счет **8745"
 
-#print(get_date('2018-07-11T02:26:18.671407')) # выведет "11.07.2018"
-#print(get_date('2024-09-12T23:23:23.671407')) # выведет "12.09.2024"
+# print(get_date('2018-07-11T02:26:18.671407')) # выведет "11.07.2018"
+# print(get_date('2024-09-12T23:23:23.671407')) # выведет "12.09.2024"
