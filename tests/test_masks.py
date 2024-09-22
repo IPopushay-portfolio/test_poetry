@@ -9,7 +9,7 @@ from src.masks import get_mask_card_number, get_mask_account
         ("1234578484648788", "1234 57** **** 8788"),
     ],
 )
-def get_mask_card_number(card_number, mask_number):
+def test_get_mask_card_number(card_number, mask_number):
     assert get_mask_card_number(card_number) == mask_number
 
 
@@ -20,5 +20,5 @@ def get_mask_card_number(card_number, mask_number):
         ("13579064547897898745", " **8745"),
     ],
 )
-def get_mask_account(account_number, mask_number):
+def test_get_mask_account(account_number, mask_number):
     assert get_mask_account(account_number) == mask_number
