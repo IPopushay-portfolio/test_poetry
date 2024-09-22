@@ -17,13 +17,13 @@ def filter_by_state(dict_list: list, state_id="EXECUTED") -> list:
     return new_list
 
 
-def sort_by_date(date_list: list) -> list:
+def sort_by_date(date_list: list, rev: bool = True) -> list:
     """Функция принимает список словарей и необязательный параметр,
     задающий порядок сортировки (по умолчанию — убывание)."""
 
-    sorted_list = sorted(date_list, key=lambda x: x["date"], reverse=True)
+    sorted_list = sorted(date_list, key=lambda x: x["date"], reverse=rev)
     return sorted_list
 
 
-# print(filter_by_state(list_of_dict))
-# print(sort_by_date(list_of_dict))
+print(filter_by_state(list_of_dict))
+print(sort_by_date(list_of_dict))
