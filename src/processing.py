@@ -25,5 +25,5 @@ def sort_by_date(date_list: list, rev: bool = True) -> list:
     return sorted_list
 
 
-print(filter_by_state(list_of_dict))
-print(sort_by_date(list_of_dict))
+# print(filter_by_state(list_of_dict))
+# print(sort_by_date(list_of_dict))
