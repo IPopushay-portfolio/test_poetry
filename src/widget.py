@@ -5,7 +5,6 @@ from src import masks
 
 def mask_account_card(type_num_account: str) -> str:
     """Функция умеет обрабатывать информацию как о картах, так и о счетах"""
-
     if "Счет" in type_num_account:
         account = type_num_account[-22:]
         # return type_num_account[:4] + masks.get_mask_account(account)
@@ -17,7 +16,6 @@ def mask_account_card(type_num_account: str) -> str:
 
 def get_date(day_pay: str) -> str:
     """Функция принимает на вход строку с датой в формате  и возвращает строку с датой"""
-
     return f"{day_pay[8:10]}.{day_pay[5:7]}.{day_pay[:4]}"
 
 

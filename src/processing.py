@@ -9,7 +9,6 @@ list_of_dict = [
 def filter_by_state(dict_list: list, state_id="EXECUTED") -> list:
     """Функция принимает список словарей и опционально значение для ключа
     state"""
-
     new_list = []
     for key in dict_list:
         if key.get("state") == state_id:
@@ -20,7 +19,6 @@ def filter_by_state(dict_list: list, state_id="EXECUTED") -> list:
 def sort_by_date(date_list: list) -> list:
     """Функция принимает список словарей и необязательный параметр,
     задающий порядок сортировки (по умолчанию — убывание)."""
-
     sorted_list = sorted(date_list, key=lambda x: x["date"], reverse=True)
     return sorted_list
 
