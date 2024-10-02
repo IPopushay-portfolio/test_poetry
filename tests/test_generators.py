@@ -20,6 +20,7 @@ def usd_transactions():
             "state": "EXECUTED",
             "date": "2019-04-04T23:20:05.206878",
             "operationAmount": {"amount": "79114.93", "currency": {"name": "USD", "code": "USD"}},
+            "description": "Открытие вклада",
         },
     ]
 
@@ -31,11 +32,11 @@ def test_filter_by_currency(currency_code, usd_transactions):
         assert usd_transactions["operationAmount"]["currency"]["code"] == currency_code
 
 
-@pytest.mark.parametrize("description")
-def test_transaction_descriptions(description, usd_transactions):
+# @pytest.mark.parametrize("description")
+def test_transaction_descriptions(usd_transactions):
+    expected = ["Перевод организации", "Открытие вклада"]
     generator = transaction_descriptions(usd_transactions)
-    for usd_transactions in generator:
-        assert usd_transactions["description"] == description
+    assert list(generator) == expected
 
 
 @pytest.fixture
@@ -53,5 +54,6 @@ def card_number():
 
 @pytest.mark.parametrize("card_number", ["0000 0000 0000 0001"])
 def test_card_number_generator(card_number):
-    generator = card_number_generator(card_number, ["0000 0000 0000 0001"])
-    assert next(generator) == card_number
+    expected = card_number
+    generator = card_number_generator(1, 4)
+    assert next(generator) == expected
