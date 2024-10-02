@@ -24,23 +24,18 @@ def usd_transactions():
     ]
 
 
-@pytest.mark.parametrize("currency_code", ["USD"])
-def test_filter_by_currency(usd_transactions, currency_code):
-    generator = filter_by_currency(currency_code, ["USD"])
-    assert next(generator) == currency_code
+@pytest.mark.parametrize("currency_code", ("USD", "RUB"))
+def test_filter_by_currency(currency_code, usd_transactions):
+    generator = filter_by_currency(usd_transactions, currency_code)
+    for usd_transactions in generator:
+        assert usd_transactions["operationAmount"]["currency"]["code"] == currency_code
 
 
-@pytest.fixture
-def descriptions():
-    return [
-        {"description": "Перевод организации", "from": "Счет 75106830613657916952", "to": "Счет 11776614605963066702"},
-    ]
-
-
-@pytest.mark.parametrize("description", ["Перевод организации"])
-def test_transaction_descriptions(description):
-    generator = transaction_descriptions(description)
-    assert next(generator) == description
+@pytest.mark.parametrize("description")
+def test_transaction_descriptions(description, usd_transactions):
+    generator = transaction_descriptions(usd_transactions)
+    for usd_transactions in generator:
+        assert usd_transactions["description"] == description
 
 
 @pytest.fixture

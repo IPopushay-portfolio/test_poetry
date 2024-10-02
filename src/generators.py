@@ -23,8 +23,10 @@ def transaction_descriptions(description):
 def card_number_generator(start, finish):
     """Создан генератор, который выдает номера банковских карт"""
     for i in range(start, finish + 1):
-        empty_str = str(i)
-        while len(empty_str) < 16:
-            str_sum = "0" + str(i)
-            card_number = f"{str_sum[:4]}{str_sum[4:8]}{str_sum[8:12]}{str_sum[12:16]}"
-            yield card_number
+        number = f"{i:016}"
+        card_number = f"{number[:4]} {number[4:8]} {number[8:12]} {number[12:16]}"
+        yield card_number
+
+
+# for card_number in card_number_generator(1, 20):
+#    print(card_number)
