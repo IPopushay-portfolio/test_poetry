@@ -19,9 +19,9 @@ def log(filename: Any) -> Any:
             except Exception as e:
                 if filename:
                     with open(filename, "a") as file:
-                        file.write(f"{func.__name__} error: {e}. Input: {args}, {kwargs}")
+                        file.write(f"{func.__name__} error: {e.__class__.__name__}. Inputs: {args}, {kwargs}")
                 else:
-                    print(f"{func.__name__} error: {e}. Input: {args}, {kwargs}")
+                    print(f"{func.__name__} error: {e.__class__.__name__}. Inputs: {args}, {kwargs}")
 
             return result
 
