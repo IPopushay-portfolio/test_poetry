@@ -1,1 +1,1 @@
-my_function okmy_function okmy_function oktest_function_success oktest_log_console ok
+my_function okmy_function okmy_function oktest_function_success oktest_log_console oktest_function_success oktest_log_console ok
