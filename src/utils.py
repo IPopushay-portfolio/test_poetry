@@ -12,8 +12,9 @@ def get_transactions(file):
                 return []
             if len(data) == 0 or type(data) != list:
                 return []
+    except data
 
-    return data
+
 
 
 def get_sum():
