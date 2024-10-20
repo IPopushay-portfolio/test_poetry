@@ -1,5 +1,7 @@
 from unittest.mock import patch
 
+from src.utils import get_transactions
+
 
 @patch("src.external_api.requests.request")
 def test_get_sum(mock_get):
@@ -11,3 +13,5 @@ def test_get_sum(mock_get):
         "result": 3724.305775,
         "success": True,
     }
+
+    assert get_transactions("error") == []
