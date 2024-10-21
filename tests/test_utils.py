@@ -1,6 +1,25 @@
 from unittest.mock import patch
 
+from src.external_api import conversion_currency
 from src.utils import get_transactions
+
+
+@patch("requests.get")
+def test_get_transactions_rub(mock_get):
+    transaction = {"amount": 100, "currency": "RUB"}
+    mock_get.return_value.status_code = 200
+    mock_get.return_value.json.return_value = {"result": 100}
+
+    assert get_transactions(transaction) == 100
+
+
+@patch("requests.get")
+def test_get_transactions_usd(mock_get):
+    transaction = {"amount": 50, "currency": "USD"}
+    mock_get.return_value.status_code = 200
+    mock_get.return_value.json.return_value = {"result": 1000}
+
+    assert get_transactions(transaction) == 1000
 
 
 @patch("src.external_api.requests.request")
@@ -14,4 +33,4 @@ def test_get_sum(mock_get):
         "success": True,
     }
 
-    assert get_transactions("error") == []
+    assert conversion_currency == []

@@ -1,6 +1,26 @@
 import json
+import logging
 
 from src.external_api import conversion_currency
+
+logger = logging.getLogger("utils")
+"""Создание объекта логгера"""
+logger.setLevel(logging.DEBUG)
+"""Установка уровня логгирования"""
+file_handler = logging.FileHandler("logs/utils.log")
+"""Создание обработчика"""
+file_formater = logging.Formatter("%(asctime)s - %(name)s - %(Levelname)s : %(message)s")
+"""Создание форматтера"""
+file_handler.setFormatter(file_formater)
+"""Привязка форматтера к обработчику"""
+logger.addHandler(file_handler)
+"""Привязка обработчика к логгеру"""
+logging.basicConfig(
+    level=logging.DEBUG,
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    filename="application.log",
+    filemode="w",
+)
 
 
 def get_transactions(file):
@@ -31,5 +51,5 @@ def get_sum():
             return sum(amount)
 
 
-if __name__ == "__main__":
+if __name__ == "__utils__":
     print(conversion_currency("RUB", "USD", "200000"))
