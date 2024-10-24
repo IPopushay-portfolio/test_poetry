@@ -1,0 +1,21 @@
+2024-10-24 21:51:55,460 - masks - DEBUG : Debug message
+2024-10-24 21:51:55,460 - masks - INFO : Info message
+2024-10-24 21:51:55,460 - masks - WARNING : Warning message
+2024-10-24 21:51:55,460 - masks - ERROR : Error message
+2024-10-24 21:51:55,460 - masks - CRITICAL : Critical message
+2024-10-24 21:53:15,528 - masks - DEBUG : Debug message
+2024-10-24 21:53:15,528 - masks - INFO : Info message
+2024-10-24 21:53:15,528 - masks - WARNING : Warning message
+2024-10-24 21:53:15,528 - masks - ERROR : Error message
+2024-10-24 21:53:15,528 - masks - CRITICAL : Critical message
+2024-10-24 21:53:19,107 - masks - DEBUG : Debug message
+2024-10-24 21:53:19,108 - masks - INFO : Info message
+2024-10-24 21:53:19,108 - masks - WARNING : Warning message
+2024-10-24 21:53:19,109 - masks - ERROR : Error message
+2024-10-24 21:53:19,109 - masks - CRITICAL : Critical message
+2024-10-24 22:15:09,115 - masks - DEBUG : Debug message
+2024-10-24 22:15:09,115 - masks - INFO : Info message
+2024-10-24 22:15:09,115 - masks - WARNING : Warning message
+2024-10-24 22:15:09,115 - masks - ERROR : Error message
+2024-10-24 22:15:09,115 - masks - CRITICAL : Critical message
+2024-10-24 22:15:09,115 - masks - INFO : Маскируем карту клиента

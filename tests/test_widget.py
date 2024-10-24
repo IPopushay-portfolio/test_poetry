@@ -12,8 +12,8 @@ from src.widget import get_date, mask_account_card
         ("Счет 13579064547897898745", "Счет **8745"),
     ],
 )
-def mask_account_card(type_num_account, mask_number):
-    assert mask_account_card(type_num_account) == mask_number
+def test_mask_account_card(type_num_account, mask_number):
+    assert mask_account_card == mask_number
 
 
 @pytest.mark.parametrize(
@@ -23,5 +23,5 @@ def mask_account_card(type_num_account, mask_number):
         ("2024-09-12T23:23:23.671407", "12.09.2024"),
     ],
 )
-def get_date(day_pay, mask_number):
-    assert get_date(day_pay) == mask_number
+def test_get_date(day_pay, mask_number):
+    assert get_date == mask_number

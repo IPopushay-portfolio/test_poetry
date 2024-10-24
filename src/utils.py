@@ -1,15 +1,20 @@
 import json
 import logging
+import os
 
 from src.external_api import conversion_currency
 
+CURRENT_DIR = os.path.dirname("utils")
+LOGS_DIR = os.path.join(CURRENT_DIR, "..", "logs")
+log_file_path = os.path.join(LOGS_DIR, "utils.log")
 logger = logging.getLogger("utils")
 """Создание объекта логгера"""
+file_handler = logging.FileHandler(log_file_path)
+"""Создание обработчика"""
 logger.setLevel(logging.DEBUG)
 """Установка уровня логгирования"""
-file_handler = logging.FileHandler("logs/utils.log")
-"""Создание обработчика"""
-file_formater = logging.Formatter("%(asctime)s - %(name)s - %(Levelname)s : %(message)s")
+
+file_formater = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s : %(message)s")
 """Создание форматтера"""
 file_handler.setFormatter(file_formater)
 """Привязка форматтера к обработчику"""
@@ -22,17 +27,27 @@ logging.basicConfig(
     filemode="w",
 )
 
+logger.debug("Debug message")
+logger.info("Info message")
+logger.warning("Warning message")
+logger.error("Error message")
+logger.critical("Critical message")
 
-def get_transactions(file):
+
+def get_transactions(path_file):
+    """Функция для получения данных из json-файла"""
     try:
-        with open(file, encoding="UTF-8") as f:
+        logger.info(f"Получение данных из файла {path_file}")
+        with open(path_file, "r", encoding="UTF-8") as f:
             try:
                 data = json.load(f)
             except json.decoder.JSONDecodeError:
+                logger.error(f"Ошибка при чтении json_файла {path_file}")
                 return []
             if len(data) == 0 or type(data) is not list:
                 return []
     except FileNotFoundError:
+        logger.error(f"Ошибка, файл {path_file} не найден")
         return []
 
 

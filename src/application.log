@@ -1,0 +1,6 @@
+2024-10-24 22:15:09,115 - masks - DEBUG - Debug message
+2024-10-24 22:15:09,115 - masks - INFO - Info message
+2024-10-24 22:15:09,115 - masks - WARNING - Warning message
+2024-10-24 22:15:09,115 - masks - ERROR - Error message
+2024-10-24 22:15:09,115 - masks - CRITICAL - Critical message
+2024-10-24 22:15:09,115 - masks - INFO - Маскируем карту клиента

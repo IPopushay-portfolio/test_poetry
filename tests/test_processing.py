@@ -12,8 +12,8 @@ from src.processing import filter_by_state, sort_by_date
         {"id": 615064591, "state": "CANCELED", "date": "2018-10-14T08:21:33.419441"},
     ],
 )
-def filter_by_state(dict_list, mask_number):
-    assert filter_by_state(dict_list) == mask_number
+def test_filter_by_state(dict_list, mask_number):
+    assert filter_by_state == mask_number
 
 
 @pytest.mark.parametrize(
@@ -23,5 +23,5 @@ def filter_by_state(dict_list, mask_number):
         ("2024-09-12T23:23:23.671407", "12.09.2024"),
     ],
 )
-def sort_by_date(day_pay, mask_number):
-    assert sort_by_date(day_pay) == mask_number
+def test_sort_by_date(day_pay, mask_number):
+    assert sort_by_date == mask_number
